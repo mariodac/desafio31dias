@@ -10,24 +10,50 @@ class No {
         this.filhos.push(no);
     }
 
-    bfs(raiz, contador) {
+    bfs(raiz) {
         const fila = [raiz];
-        console.log(contador);
+        // console.log();
         while (fila.length > 0) {
             const no = fila.shift();
             console.log(no.nome);
             no.filhos.forEach((filho) => {
-                contador += raiz.quantidadeNos;
-                this.bfs(filho, contador);
+                fila.push(filho);
             });
         }
-        return contador;
     }
 
-    contarNos(raiz) {
-        let contador = 0;
-        contador = this.bfs(raiz, contador);
-        return contador;
+    dfs(no) {
+        console.log(no.nome);
+        no.filhos.forEach((filho) => {
+            this.dfs(filho);
+        });
+    }
+
+    contarNos() {
+        let total = 1;
+        this.filhos.forEach((filho) => {
+            total += filho.contarNos();
+        });
+        return total;
+    }
+
+    buscarDFS(valor) {
+        if (this.nome === valor) return this;
+        for (const filho of this.filhos) {
+            const resultado = filho.buscarDFS(valor);
+            if (resultado) return resultado;
+        }
+        return null;
+    }
+
+    buscarBFS(valor) {
+        const fila = [this];
+        while (fila.length > 0) {
+            const atual = fila.shift();
+            if (atual.nome === valor) return atual;
+            fila.push(...atual.filhos);
+        }
+        return null;
     }
 }
 
@@ -52,9 +78,27 @@ const analistaDesigner = new No("Analista Designer");
 gerenteMarketing.adicionarNo(analistaDesigner);
 gerenteMarketing.adicionarNo(analistaFrontEnd);
 
-// ceo.bfs(ceo, 0);
+// ceo.bfs(ceo);
 
 // 2. Implemente uma função para contar o número total de nós em uma árvore.
 // ceo.contarNos(ceo)
 console.log(ceo.contarNos(ceo));
-// console.log(gerenteFinancas.quantidadeNos)
+
+// 3. Crie uma árvore genealógica e implemente um método para listar todos os descendentes de um nó.
+const bisavo = new No("Bisavo");
+const avo = new No("Avo");
+const pai = new No("Pai");
+const filho = new No("Filho");
+
+bisavo.adicionarNo(avo);
+avo.adicionarNo(pai);
+pai.adicionarNo(filho);
+bisavo.bfs(bisavo);
+
+// 4. Implemente uma busca em profundidade e largura para encontrar um nó com um valor específico.
+console.log("Buscando valor");
+let noEncontrado = ceo.buscarDFS("Gerente Finanças");
+console.log(noEncontrado)
+noEncontrado = ceo.buscarBFS("Gerente Finanças");
+console.log(noEncontrado)
+
