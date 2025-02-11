@@ -95,3 +95,23 @@ async function executar() {
 }
 
 executar();
+
+// entenda event loop, é o mecanismo que gerencia a execução assíncrona no JavaScript, saiba como ele funciona para evitar confusões
+// evite misturar callbacks com promises, escolha uma abordagem e mantenha a consistência no código
+// use try/catch com async/await, sempre trate erros para evitar falhas inesperadas
+
+// exemplo com api placeholder
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then((resposta) => {
+        if (resposta.ok) {
+            return resposta.json();
+        } else {
+            throw new Error("Erro ao buscar os dados");
+        }
+    })
+    .then((repostaJson) => {
+        console.log(repostaJson);
+    })
+    .catch((erro) => {
+        console.error("Erro: ", erro);
+    });
