@@ -59,6 +59,21 @@ prepararIngredientes(() => {
 
 // Promises, resolvendo o callback hell
 // uma Promise representa uma operação que ainda não foi concluída, mas será resolvido ou rejeitada no futuro
+const promise = new Promise((resolve, reject) => {
+    let result = false
+    if (result) {
+        resolve('Deu certo')
+    } else {
+        reject('Deu errado')
+    }
+})
+promise
+    .then((resposta) => {
+        console.log(resposta)
+    })
+    .catch((resposta) => {
+        console.log(resposta)
+    })
 function buscarDado() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
