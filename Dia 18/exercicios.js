@@ -62,3 +62,16 @@ async function exibirProdutos() {
 }
 
 exibirProdutos()
+
+
+// 4. Escreva uma função que execute três tarefas sequenciais usando Promises e Async/Await.
+async function executarTarefas() {
+    await carregarProdutos()
+    console.log("Produtos carregados")
+    await aguardaEvento()
+    console.log("Evento executado")
+    await carregarDados()
+    console.log("Dados carregados")
+}
+
+executarTarefas()
