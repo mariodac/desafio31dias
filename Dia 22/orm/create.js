@@ -1,21 +1,16 @@
 const Usuario = require("./Usuario");
 
-async function criarUsuarios() {
+async function criarUsuarios(nome, email, idade) {
     try {
         await Usuario.create({
-            nome: "João Campos",
-            email: "joao2@email.com",
-            idade: 30,
+            nome,
+            email,
+            idade,
         });
-        await Usuario.create({
-            nome: "Maria Oliveira",
-            email: "maria@email.com",
-            idade: 28,
-        });
-        console.log("Usuários criados com sucesso!");
+        console.log("Usuário criado com sucesso!");
     } catch (error) {
-        console.error("Erro ao criar usuários:", error);
+        console.error("Erro ao criar usuário:", error);
     }
 }
 
-criarUsuarios();
+module.exports = { criarUsuarios };
