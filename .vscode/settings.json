@@ -3,9 +3,14 @@
         "Cartao",
         "celsius",
         "fibonacci",
+        "hstore",
         "numeros",
+        "postgres",
         "preco",
         "retangulo",
-        "saudacao"
+        "saudacao",
+        "Usuario",
+        "usuarios",
+        "Varios"
     ]
 }
