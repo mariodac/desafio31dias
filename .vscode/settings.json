@@ -5,10 +5,12 @@
         "fibonacci",
         "hstore",
         "numeros",
+        "permissao",
         "postgres",
         "preco",
         "retangulo",
         "saudacao",
+        "usuario",
         "Usuario",
         "usuarios",
         "Varios"
