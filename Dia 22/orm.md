@@ -1,10 +1,5 @@
 # Dia 22/31 - ORM
 
----
-
-[22.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/f7feecbd-7058-4805-b782-5c71283c99cc/539d3d1d-dbe9-4cf6-b13f-869e9b87004c/22.mp4)
-
----
 
 ## 🌟 **Bem-vindo ao mundo do ORM!**
 
