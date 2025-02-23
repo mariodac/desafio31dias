@@ -353,8 +353,8 @@ docker run --name my-nginx -d -p 8080:80 nginx
 ```
 
 - `-name my-nginx`: Nomeia o container como `my-nginx`.
-- `d`: Executa o container em segundo plano (modo "detached").
-- `p 8080:80`: Mapeia a porta 80 do container para a porta 8080 no host.
+- `-d`: Executa o container em segundo plano (modo "detached").
+- `-p 8080:80`: Mapeia a porta 80 do container para a porta 8080 no host.
 - `nginx`: Especifica a imagem a ser usada.
 
 ## Gerenciando Containers 📋
@@ -402,7 +402,7 @@ Cria e executa um novo container.
 docker run -it ubuntu /bin/bash
 ```
 
-- `it`: Interativo + terminal, permite interagir com o container.
+- `-it`: Interativo + terminal, permite interagir com o container.
 - `ubuntu`: A imagem a ser usada.
 - `/bin/bash`: Comando a ser executado no container.
 
